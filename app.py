@@ -17,4 +17,4 @@ app.layout = dash_table.DataTable(
     data=df.to_dict('records'),
 )
 
-app.run_server(debug=True, host="0.0.0.1")
+app.run_server(debug=True)
