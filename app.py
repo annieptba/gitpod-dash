@@ -10,6 +10,7 @@ import pandas as pd
 df = pd.read_csv('https://bit.ly/elements-periodic-table')
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = dash_table.DataTable(
     id='table',
@@ -17,4 +18,6 @@ app.layout = dash_table.DataTable(
     data=df.to_dict('records'),
 )
 
-app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=True)
+
