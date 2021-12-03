@@ -58,14 +58,13 @@ def make_pivot_table(n_clicks, index, column, value):
 
         df_piv = df_piv.rename(columns={df_piv.columns[0]:'row=' + index + '|' + 'col=' + column})
 
-        pivot_table = [dash_table.DataTable(
+        pivot_table = dash_table.DataTable(
                             id = 'output-table',
                             columns = [{"name": str(i), "id": str(i)}
                                     for i
                                     in df_piv.columns],
                             data = df_piv.to_dict('records')
                             )
-                        ]
 
         return pivot_table
 
