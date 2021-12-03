@@ -45,12 +45,6 @@ app.layout = html.Div(
 )
 def make_pivot_table(n_clicks, index, column, value):
 
-    selection = {x:x for x in option}
-
-    index = selection[index]
-    column = selection[column]
-    value = selection[value]
-
     if index==column or index==value or column==value:
         return "Index, Column, and Value Selections Must Be Different From One Another"
 
