@@ -4,7 +4,6 @@ from dash import dcc # dash core components
 from dash import html
 from dash.dependencies import Input, Output, State
 import pandas as pd
-import numpy as np
 
 df = pd.read_csv('https://bit.ly/elements-periodic-table')
 
@@ -63,7 +62,7 @@ def make_pivot_table(n_clicks, index, column, value):
 
         df_piv = df_piv.reset_index(drop = False)
 
-        df_piv = df_piv.rename(columns={df_piv.columns[0]: 'row=' + index + '/' + 'col= ' + column})
+        df_piv = df_piv.rename(columns={df_piv.columns[0]:'row=' + index + '|' + 'col=' + column})
 
         pivot_table = [dash_table.DataTable(
                             id = 'output-table',
