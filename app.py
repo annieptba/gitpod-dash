@@ -12,6 +12,8 @@ def identity(x): return x
 
 app = dash.Dash(__name__)
 
+server = app.server
+
 option = list(df.columns)
 
 app.layout = html.Div(
@@ -76,4 +78,5 @@ def make_pivot_table(n_clicks, index, column, value):
 
         return pivot_table
 
-app.run_server(debug=True, host="0.0.0.0")
+if __name__ == '__main__':
+    app.run_server(debug=True)
