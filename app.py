@@ -46,9 +46,7 @@ app.layout = html.Div(
 )
 def make_pivot_table(n_clicks, index, column, value):
 
-    df = pd.read_csv('https://bit.ly/elements-periodic-table')
-
-    selection = {x:x for x in list(df.columns)}
+    selection = {x:x for x in option}
 
     index = selection[index]
     column = selection[column]
